@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    transition: background-color 0.3s ease;
+}
+
+:root {
+    --background-color: #f4f4f4;
+    --card-background: #fff;
+    --text-color: #333;
+    --shadow-color: rgba(27, 27, 27, 0.644);
+}
+
+[data-theme="dark"] {
+    --background-color: #121212;
+    --card-background: #1e1e1e;
+    --text-color: #f4f4f4;
+    --shadow-color: rgba(0, 0, 0, 0.8);
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 370px;
+    width: 100%;
+    background: var(--card-background);
+    border-radius: 24px;
+    padding: 25px;
+    box-shadow: 0 5px 10px var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: #16d3ec;
+    padding: 3px;
+    margin-bottom: 10px;
+}
+
+.image .profile-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+.text-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.text-data .name {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.text-data .job {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.media-buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.media-buttons .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    margin: 0 8px;
+    background-color: #4070f4;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.media-buttons .link:hover {
+    transform: scale(1.1);
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}

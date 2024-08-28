@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <button class="theme-toggle" id="theme-toggle"><i class='bx bx-moon'></i></button>
+    <div class="profile-card">
+        <div class="image">
+            <img src="pic1.jpg" alt="dev" class="profile-img">
+        </div>
+        <div class="text-data">
+            <span class="name">Devendra Singh</span>
+            <span class="job">Frontend Developer</span>
+        </div>
+        <div class="media-buttons">
+            <a href="https://www.facebook.com/profile.php?id=100013174096680" style="background: #39568f;" class="link"><i class='bx bxl-facebook'></i></a>
+            <a href="https://www.linkedin.com/in/devtech01/" style="background: #0777e7;" class="link"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://www.instagram.com/devrajput0108/" style="background: #ff2d73;" class="link"><i class='bx bxl-instagram'></i></a>
+            <a href="https://github.com/DevRajput01" style="background: rgb(112, 109, 109);" class="link"><i class='bx bxl-github'></i></a>
+            <a href="https://www.youtube.com/channel/UCXxrGT2xgEgPwLBcSOUNI9w" style="background: red;" class="link"><i class='bx bxl-youtube'></i></a>
+        </div>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const newTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.innerHTML = newTheme === 'light' ? "<i class='bx bx-moon'></i>" : "<i class='bx bx-sun'></i>";
+        });
+    </script>
+</body>
+</html>
+
